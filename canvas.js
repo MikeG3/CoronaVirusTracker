@@ -21,7 +21,7 @@ var hexColor = 0;
 var hexValue;
 var max = 0, maxIndex = 0;
 var x = 25, y = 0;
-var frame = 0, interval = 250;
+var frame = 0, interval = 190;
 //date
 var date = new Date();
 //DATA
