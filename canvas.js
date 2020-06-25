@@ -43,6 +43,7 @@ function move(key) {
 
 function restart() {
   //clear screen
+  c.fillStyle = "#11EC47";
   c.fillRect(0, 0, windowWidth, windowHeight);
   //Re-intialize variables
   date = new Date();
