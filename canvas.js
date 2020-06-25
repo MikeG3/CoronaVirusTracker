@@ -19,6 +19,9 @@ var c = canvas.getContext('2d');
 var i = 0, j = 0, k = 0;
 var hexColor = 0;
 var hexValue;
+var max = 0, maxIndex = 0;
+var x = 25, y = 0;
+var frame = 0, interval = 250;
 //date
 var date = new Date();
 //DATA
@@ -39,17 +42,19 @@ function move(key) {
 } //close move function
 
 function restart() {
-  //clear creen
-  fillRect(0, 0, windowWidth, windowHeight);
+  //clear screen
+  c.fillRect(0, 0, windowWidth, windowHeight);
   //Re-intialize variables
   date = new Date();
+  frame = 0;
   getDateData();
   //run game loop
+  startScreen();
   animate();
 } //close function restart
 
 function getDateData(){
-  data = [];
+  data = new Array();
   data.push(date.getFullYear());
   data.push(date.getMonth());
   data.push(date.getDate());
@@ -82,15 +87,51 @@ function displayData(){
   }//close for each data element
 }//close function display Data
 
-function sort(){
+function selectSort(){
+  y = data.length*25 + 185;
+  c.fillStyle = "#000000";
+  c.fillText("Naively Select Sorting with N^2 Time Complexity:", 0, y);
+  y += 35;
+  data.sort(function(a, b){return b - a});
+  // for (i = 0 ; i < data.length ; i++){
+  //   maxIndex = i;
+  //   for (j = i+1 ; j < data.length ; j++){
+  //     if (data[i] > data[j]){
 
+  //     }//close if 
+  //   }//close for j
+  // }//close for i
+  //Show Sorted Data
+  for (i = 0 ; i < data.length ; i++){
+    y += 25;
+    if (frame == interval*i+interval){
+      y += 25;
+      console.log(i + " = i    y = " + y + "  DEBUG");
+      c.fillStyle = 'rgb(' +red[i]+ ',' +blue[i]+ ',' +green[i]+ ')';
+      c.fillText(data[i], 0, y);
+      c.fillRect(100, y-18, data[i], 25);
+      // y += 25;
+    }//if frame counter is in sequence
+  }//close for i display data
 }//close function sort
 
-function animate() {
+function startScreen(){
   displayDate();
   displayData();
-  //requestAnimationFrame(animate);
+}//close function strat screen
+
+function animate() {
+  frame++;
+  if (frame >= interval){ 
+    selectSort(); 
+  }
+
+  console.log(frame);
+  if (frame < interval*30){
+    requestAnimationFrame(animate);
+  }//if frame is less than
 } //close function play tic tac toe
 
 //CODE TO BE EXECUTED
+startScreen();
 animate();
