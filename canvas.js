@@ -14,6 +14,7 @@ canvas.addEventListener('keydown', move);
 var c = canvas.getContext('2d');
 
 //GLOBAL VARIABLES
+var backgroundColor = "#00CDEF";
 //booleans
 //integers
 var i = 0, j = 0, k = 0;
@@ -21,7 +22,7 @@ var hexColor = 0;
 var hexValue;
 var max = 0, maxIndex = 0;
 var x = 25, y = 0;
-var frame = 0, interval = 190;
+var frame = 0, interval = 100;
 //date
 var date = new Date();
 //DATA
@@ -43,7 +44,7 @@ function move(key) {
 
 function restart() {
   //clear screen
-  c.fillStyle = "#11EC47";
+  c.fillStyle = backgroundColor;
   c.fillRect(0, 0, windowWidth, windowHeight);
   //Re-intialize variables
   date = new Date();
@@ -87,6 +88,24 @@ function displayData(){
     c.fillRect(100, i*25+135, data[i], 25);
   }//close for each data element
 }//close function display Data
+
+function displayMax(max, num){
+  c.fillStyle = "#000000";
+  c.fillText("Max = " + max + "    " + num + " > " + max + " ?", 0, y);
+}//close functoin display max
+
+function displayMaxBox(){
+
+}//close function display max box
+
+function displayNumBox(){
+  for ( i = 0 ; i < data.length ; i++){
+    c.fillRect()
+    
+    
+
+  }//close for i
+}//close function display num box
 
 function selectSort(){
   y = data.length*25 + 185;
