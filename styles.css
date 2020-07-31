@@ -5,3 +5,9 @@ body{
   padding: 0;
   text-align: center;
 }
+
+h1{
+  font-family: 'Stalinist One';
+  color: #000000;
+  text-align: center; 
+}
