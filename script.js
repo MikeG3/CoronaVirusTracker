@@ -11,4 +11,4 @@ function showMap(){
 
 //CODE TO BE EXECUTED
 showMap();
-console.log( document.getElementById("map") );
+displayStats();

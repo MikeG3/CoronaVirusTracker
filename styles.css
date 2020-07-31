@@ -6,8 +6,19 @@ body{
   text-align: center;
 }
 
+p{
+  font-family: 'Stalinist One';
+  color: #000000;
+  text-align: left;
+  font-size: medium; 
+}
+
 h1{
   font-family: 'Stalinist One';
   color: #000000;
   text-align: center; 
+}
+
+.province:hover{
+  fill: #AAAAAA;
 }
