@@ -12,11 +12,21 @@ function getProvince(province){
 }//close function get province
 
 //VARIABLES
-var hoverMap = "";
-
 const hoverColor = "#DDDDDD";
 
 const provinces = ["yk", "nw", "nv", "bc", "ab", "mb", "on","qc", "pei", "nb", "ns", "nl"];
+
+//Province SVG Elements
+var provinceElements = new Array();
+
+function getProvinceElements(){
+    for (let i = 0 ; i < provinces.length ; i++ ){
+        //console.log( provinces[i] );
+        //console.log( document.getElementById(provinces[i]) );
+        provinceElements.push( document.getElementById(provinces[i]) );
+        provinceElements[i].addEventListener("mouseover", getProvinceData(provinces[i]));
+    }//close for i
+}//close function get province elements
 
 var map = `
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"

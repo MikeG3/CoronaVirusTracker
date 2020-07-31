@@ -12,3 +12,5 @@ function showMap(){
 //CODE TO BE EXECUTED
 showMap();
 displayStats();
+getProvinceElements();
+updateData();
