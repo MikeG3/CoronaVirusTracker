@@ -12,14 +12,24 @@ function updateStats(){
     //UPDATE STATS ALGORITHMICALLY IN SCRIPT.JS AFTER DISPLAYING MAP
 }//close function update stats
 
-function displayStats(provinceIndex){
+function displayProvincialStats(provinceIndex){
     output = name + "<br>";
     output += "Population: " + population[provinceIndex] + "<br>";
     output += "Total Infections: " + totalInfections + "<br>";
     output += "Current Infections: " + currentlyInfected + "<br>";
     output += "Recoveries: " + recoveries + "<br>";
     output += "Deaths: " + death;
-    document.getElementById("stats").innerHTML = output;
+    document.getElementById("provincialStats").innerHTML = output;
+}//close function
+
+function displayNationalStats(){
+    output = "Canada<br>";
+    output += "Population: " + "35151728<br>";
+    output += "Total Infections: " + totalInfections + "<br>";
+    output += "Current Infections: " + currentlyInfected + "<br>";
+    output += "Recoveries: " + recoveries + "<br>";
+    output += "Deaths: " + death;
+    document.getElementById("nationalStats").innerHTML = output;
 }//close function
 
 function updateData(){
@@ -39,7 +49,7 @@ function getProvinceData(provinceIndex){
     // currentlyInfected = ;
     // recoveries = ;
     // death = ;
-    displayStats(provinceIndex);
+    displayProvincialStats(provinceIndex);
 //ADD CODE HERE
 //UPDATE AND DISPLAY PROVINCIAL DATA, TRIGGERED BY MOSE OVER PROVINCE IN MAP.JS
 }//close function get province data

@@ -12,7 +12,7 @@ function showMap(){
 //CODE TO BE EXECUTED
 //Load screen with map and stats
 showMap();
-// displayNationalStats();
+displayNationalStats();
 //Set event listner
 getProvinceElements();
 //Fetch the data

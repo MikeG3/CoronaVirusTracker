@@ -35,7 +35,7 @@ function getProvinceElements(){
 
 var map = `
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="2300pt" height="2300pt" 
+ width="100%" height="100%" 
  preserveAspectRatio="xMidYMid meet">
 <g transform="translate(0.000000,1600) scale(0.0900000,-0.0900000)"
 fill="#000000" stroke="none">
