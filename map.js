@@ -1,30 +1,35 @@
-//MAP FILE
+//MAP 
+
+//VARIABLES
+var provinceElements = new Array();
+const provinces = ["yk", "nw", "nv", "bc", "ab", "sk", "mb", "on","qc", "pei", "nb", "ns", "nl"];
+const provinceNames = ["Yukon", "North West Territories", "Nunavut", "British Columbia", "Alberta", "Saskatchewan",  "Manitoba", "Ontario", "Quebec", "Prince Edward Island", "New Brunswick", "Nova Scotia", "Newfoundland"];
+const population = [35874, 41786, 35944, 4648055, 4076165, 1098352, 1278365, 13448494, 8164361, 142907, 747101, 923598, 519716];
+const hoverColor = "#DDDDDD";
+var hoverMap = getMap();
+//const map (String) below
 
 //FUNCTIONS
 function getMap(){ return map; }
 
 function getProvince(province){
-    console.log("A");
+    console.log("-->getProvince(province)   called");
     hoverMap = getMap.replace("id=\""+province+"\"", "id=\""+province+"\" fill=" + hoverColor + "\" " );
     console.log(hoverMap);
     console.log(document.getElementById(map));
     document.getElementById(map).innerHTML = hoverMap;
 }//close function get province
 
-//VARIABLES
-const hoverColor = "#DDDDDD";
-
-const provinces = ["yk", "nw", "nv", "bc", "ab", "mb", "on","qc", "pei", "nb", "ns", "nl"];
-
-//Province SVG Elements
-var provinceElements = new Array();
 
 function getProvinceElements(){
     for (let i = 0 ; i < provinces.length ; i++ ){
-        //console.log( provinces[i] );
-        //console.log( document.getElementById(provinces[i]) );
+        console.log( "--> getProvinceElements()  called" );
+        // console.log( document.getElementById(provinces[i]) );
         provinceElements.push( document.getElementById(provinces[i]) );
-        provinceElements[i].addEventListener("mouseover", getProvinceData(provinces[i]));
+        // console.log( provinceElements[i]) ;
+        provinceElements[i].addEventListener( "mouseover", function(){
+            getProvinceData(i);
+         } );
     }//close for i
 }//close function get province elements
 

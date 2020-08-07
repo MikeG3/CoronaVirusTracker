@@ -2,7 +2,7 @@
 
 //Variables
 var name = "Canada";
-var population = 0, totalInfections = 0, currentlyInfected = 0, recoveries = 0, death = 0;
+var totalInfections = 0, currentlyInfected = 0, recoveries = 0, death = 0;
 var output = "";
 var allData;
 
@@ -12,9 +12,9 @@ function updateStats(){
     //UPDATE STATS ALGORITHMICALLY IN SCRIPT.JS AFTER DISPLAYING MAP
 }//close function update stats
 
-function displayStats(){
+function displayStats(provinceIndex){
     output = name + "<br>";
-    output += "Population: " + population + "<br>";
+    output += "Population: " + population[provinceIndex] + "<br>";
     output += "Total Infections: " + totalInfections + "<br>";
     output += "Current Infections: " + currentlyInfected + "<br>";
     output += "Recoveries: " + recoveries + "<br>";
@@ -28,13 +28,18 @@ function updateData(){
     //.then( allData = res.json())
     .then( data => console.log(data))
     // .then( allData => res )
-    console.log(allData);
-
+  
 }//close function update data
 
-function getProvinceData(provinceName){
-    name = provinceName;
-    displayStats();
+function getProvinceData(provinceIndex){
+    console.log("--> stats.getProvinceData(provinceIndex) called");
+    name = provinceNames[provinceIndex];
+    //Get the rest of the data
+    // totalInfections = ;
+    // currentlyInfected = ;
+    // recoveries = ;
+    // death = ;
+    displayStats(provinceIndex);
 //ADD CODE HERE
 //UPDATE AND DISPLAY PROVINCIAL DATA, TRIGGERED BY MOSE OVER PROVINCE IN MAP.JS
 }//close function get province data
